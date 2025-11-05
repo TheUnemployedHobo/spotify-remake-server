@@ -1,7 +1,7 @@
 import { integer, pgTable, primaryKey } from "drizzle-orm/pg-core"
 
-export const likedSongs = pgTable(
-  "liked_songs",
+export const favorites = pgTable(
+  "favorites",
   {
     song_id: integer("song_id").notNull(),
     user_id: integer("user_id").notNull(),

@@ -1,8 +1,8 @@
 import { relations } from "drizzle-orm"
 
 import { artists } from "./schema/artist.schema"
+import { favorites } from "./schema/favorite.schema"
 import { genres } from "./schema/genre.schema"
-import { likedSongs } from "./schema/liked.schema"
 import { playlistInfo, playlists } from "./schema/playlists.schema"
 import { songs } from "./schema/song.schema"
 import { users } from "./schema/user.schema"
@@ -37,14 +37,14 @@ export const playlistsRelations = relations(playlists, ({ one }) => ({
   }),
 }))
 
-export const likedSongsRelations = relations(likedSongs, ({ one }) => ({
+export const favoritesRelations = relations(favorites, ({ one }) => ({
   song: one(songs, {
-    fields: [likedSongs.song_id],
+    fields: [favorites.song_id],
     references: [songs.id],
   }),
 }))
 
 export const usersRelations = relations(users, ({ many }) => ({
-  likedSongs: many(likedSongs),
+  favorites: many(favorites),
   playlists: many(playlistInfo),
 }))
