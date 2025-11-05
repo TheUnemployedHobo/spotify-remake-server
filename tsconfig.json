@@ -44,10 +44,10 @@
     // Import Aliases
     "baseUrl": "./src",
     "paths": {
-      // "@controllers/*": ["controllers/*"],
-      // "@middleware/*": ["middleware/*"],
-      // "@prisma/*": ["../prisma/*"],
-      // "@routes/*": ["routes/*"]
+      "@controllers/*": ["controllers/*"],
+      "@middlewares/*": ["middlewares/*"],
+      "@database/*": ["database/*"],
+      "@routes/*": ["routes/*"]
     }
   }
 }
