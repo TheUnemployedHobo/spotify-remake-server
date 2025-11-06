@@ -1,5 +1,5 @@
-import { genreGetAll } from "@controllers/genres.controller"
-import { resolveAuthToken } from "@middlewares/custom.mw"
+import { genreGetAll } from "@controllers/genres.controller.js"
+import { resolveAuthToken } from "@middlewares/custom.mw.js"
 import { Router } from "express"
 
 const route = Router()

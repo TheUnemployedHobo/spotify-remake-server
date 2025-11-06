@@ -1,7 +1,7 @@
 import type { RequestHandler } from "express"
 
-import db from "@database/index"
-import { users } from "@database/schema/user.schema"
+import db from "@database/index.js"
+import { users } from "@database/schema/user.schema.js"
 import { compare, hash } from "bcrypt"
 import { eq } from "drizzle-orm"
 import jwt from "jsonwebtoken"

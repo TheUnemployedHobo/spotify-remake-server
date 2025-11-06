@@ -1,47 +1,45 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
+  // ------------------------------------------------------------
+  // 🚀 TypeScript configuration for Vercel + Express (ESM build)
+  // ------------------------------------------------------------
   "compilerOptions": {
-    // File Layout
-    "rootDir": "./",
+    /* Folder structure */
+    "rootDir": "./src",
     "outDir": "./dist",
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "preserve",
-    "target": "esnext",
-    "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
+    /* Modern Node environment (ESM aware) */
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
 
-    // Other Outputs
-    "sourceMap": true,
+    /* ESM compatibility helpers */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    /* Emit options */
     "declaration": true,
     "declarationMap": true,
+    "sourceMap": true,
+    "importHelpers": true,
 
-    // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-
-    // Style Options
+    /* Strictness & safety */
+    "strict": true,
+    "noImplicitAny": true,
     "noImplicitReturns": true,
-    "noImplicitOverride": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
-    "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
     "skipLibCheck": true,
 
-    // Import Aliases
+    /* Module resolution tweaks */
+    "moduleDetection": "force",
+
+    /* Path aliases for clean imports */
     "baseUrl": "./src",
     "paths": {
       "@controllers/*": ["controllers/*"],
@@ -49,5 +47,11 @@
       "@database/*": ["database/*"],
       "@routes/*": ["routes/*"]
     }
-  }
+  },
+
+  /* Include the source directory for compilation */
+  "include": ["src"],
+
+  /* Optional: explicitly exclude build artifacts */
+  "exclude": ["node_modules", "dist", ".vercel"]
 }

@@ -1,8 +1,8 @@
 import type { RequestHandler } from "express"
 
-import db from "@database/index"
-import { artists } from "@database/schema/artist.schema"
-import { genres } from "@database/schema/genre.schema"
+import db from "@database/index.js"
+import { artists } from "@database/schema/artist.schema.js"
+import { genres } from "@database/schema/genre.schema.js"
 import { eq } from "drizzle-orm"
 
 export const artistGet: RequestHandler = async (req, res) => {

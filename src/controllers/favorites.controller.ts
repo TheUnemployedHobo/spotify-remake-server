@@ -1,7 +1,7 @@
 import type { RequestHandler } from "express"
 
-import db from "@database/index"
-import { favorites } from "@database/schema/favorite.schema"
+import db from "@database/index.js"
+import { favorites } from "@database/schema/favorite.schema.js"
 import { and, eq } from "drizzle-orm"
 
 export const favoriteGet: RequestHandler = async (req, res) => {

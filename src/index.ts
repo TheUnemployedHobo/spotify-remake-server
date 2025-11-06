@@ -1,11 +1,11 @@
-import artistsRoute from "@routes/artists.route"
-import favoritesRoute from "@routes/favorites.route"
-import genresRoute from "@routes/genres.route"
-import playlistsRoute from "@routes/playlists.route"
-import songsRoute from "@routes/songs.route"
-import usersRoute from "@routes/users.route"
+import middlewares from "@middlewares/index.js"
+import artistsRoute from "@routes/artists.route.js"
+import favoritesRoute from "@routes/favorites.route.js"
+import genresRoute from "@routes/genres.route.js"
+import playlistsRoute from "@routes/playlists.route.js"
+import songsRoute from "@routes/songs.route.js"
+import usersRoute from "@routes/users.route.js"
 import express from "express"
-import middlewares from "middlewares"
 import "dotenv/config"
 
 const app = express()

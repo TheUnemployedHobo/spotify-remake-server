@@ -1,5 +1,5 @@
-import { userDelete, userSignIn, userSignUp, userUpdate } from "@controllers/users.controller"
-import { requestValidator, resolveAuthToken } from "@middlewares/custom.mw"
+import { userDelete, userSignIn, userSignUp, userUpdate } from "@controllers/users.controller.js"
+import { requestValidator, resolveAuthToken } from "@middlewares/custom.mw.js"
 import { Router } from "express"
 import z from "zod"
 
