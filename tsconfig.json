@@ -1,48 +1,44 @@
 {
-  // ------------------------------------------------------------
-  // 🚀 TypeScript configuration for Vercel + Express (ESM build)
-  // ------------------------------------------------------------
+  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    /* Folder structure */
-    "rootDir": "./src",
-    "outDir": "./dist",
+    // File Layout
+    // "rootDir": "./src",
+    // "outDir": "./dist",
 
-    /* Modern Node environment (ESM aware) */
-    "target": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "nodenext",
+    "target": "esnext",
+    "types": [],
+    // For nodejs:
+    // "lib": ["esnext"],
+    // "types": ["node"],
+    // and npm install -D @types/node
 
-    /* ESM compatibility helpers */
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-
-    /* Emit options */
+    // Other Outputs
+    "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true,
-    "importHelpers": true,
 
-    /* Strictness & safety */
-    "strict": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
+    // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
-    "skipLibCheck": true,
 
-    /* Module resolution tweaks */
-    "moduleDetection": "force"
-  },
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
 
-  /* Include the source directory for compilation */
-  "include": ["src"],
-
-  /* Optional: explicitly exclude build artifacts */
-  "exclude": ["node_modules", "dist", ".vercel"]
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true
+  }
 }
