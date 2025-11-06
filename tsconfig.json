@@ -37,16 +37,7 @@
     "skipLibCheck": true,
 
     /* Module resolution tweaks */
-    "moduleDetection": "force",
-
-    /* Path aliases for clean imports */
-    "baseUrl": "./src",
-    "paths": {
-      "@controllers/*": ["controllers/*"],
-      "@middlewares/*": ["middlewares/*"],
-      "@database/*": ["database/*"],
-      "@routes/*": ["routes/*"]
-    }
+    "moduleDetection": "force"
   },
 
   /* Include the source directory for compilation */

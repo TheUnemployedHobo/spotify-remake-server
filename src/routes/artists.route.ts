@@ -1,6 +1,7 @@
-import { artistGet } from "@controllers/artists.controller.js"
-import { resolveAuthToken } from "@middlewares/custom.mw.js"
 import { Router } from "express"
+
+import { artistGet } from "../controllers/artists.controller.js"
+import { resolveAuthToken } from "../middlewares/custom.mw.js"
 
 const route = Router()
 
