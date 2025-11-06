@@ -6,19 +6,22 @@ import songsRoute from "@routes/songs.route"
 import usersRoute from "@routes/users.route"
 import express from "express"
 import middlewares from "middlewares"
-import serverless from "serverless-http"
 import "dotenv/config"
 
 const app = express()
 
 app.use(middlewares)
+
 app.use("/api/users", usersRoute)
 app.use("/api/songs", songsRoute)
 app.use("/api/genres", genresRoute)
 app.use("/api/artists", artistsRoute)
 app.use("/api/playlist", playlistsRoute)
 app.use("/api/favorites", favoritesRoute)
+
 app.use((_, res) => res.sendStatus(404))
 
-export const handler = serverless(app)
-export default app
+const PORT = process.env["PORT"]
+const SERVER_URL = process.env["SERVER_URL"]
+
+app.listen(PORT, () => console.log(`Server running on ${SERVER_URL}`))
