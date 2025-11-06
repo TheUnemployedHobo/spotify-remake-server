@@ -6,7 +6,6 @@ import { users } from "./user.schema.js"
 export const playlistInfo = pgTable("playlist_info", {
   description: varchar("description"),
   id: serial("id").primaryKey(),
-  img: varchar("img"),
   title: varchar("title").notNull(),
   user_id: integer("user_id")
     .notNull()

@@ -17,7 +17,7 @@ app.use("/api/users", usersRoute)
 app.use("/api/songs", songsRoute)
 app.use("/api/genres", genresRoute)
 app.use("/api/artists", artistsRoute)
-app.use("/api/playlist", playlistsRoute)
+app.use("/api/playlists", playlistsRoute)
 app.use("/api/favorites", favoritesRoute)
 
 app.use((_, res) => res.sendStatus(404))
