@@ -1,7 +1,6 @@
 import type { RequestHandler } from "express"
 
-import db from "@database/index"
-
+import db from "../database/index.js"
 import { genres } from "../database/schema/genre.schema.js"
 
 export const genreGetAll: RequestHandler = async (_, res) => {

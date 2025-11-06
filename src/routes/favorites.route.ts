@@ -1,6 +1,7 @@
-import { favoriteGet, favoriteInsertOrDelete } from "@controllers/favorites.controller"
-import { resolveAuthToken } from "@middlewares/custom.mw"
 import { Router } from "express"
+
+import { favoriteGet, favoriteInsertOrDelete } from "../controllers/favorites.controller.js"
+import { resolveAuthToken } from "../middlewares/custom.mw.js"
 
 const route = Router()
 

@@ -1,6 +1,7 @@
-import { genreGetAll } from "@controllers/genres.controller"
-import { resolveAuthToken } from "@middlewares/custom.mw"
 import { Router } from "express"
+
+import { genreGetAll } from "../controllers/genres.controller.js"
+import { resolveAuthToken } from "../middlewares/custom.mw.js"
 
 const route = Router()
 

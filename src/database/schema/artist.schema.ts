@@ -1,6 +1,6 @@
 import { integer, pgTable, serial, varchar } from "drizzle-orm/pg-core"
 
-import { genres } from "./genre.schema"
+import { genres } from "./genre.schema.js"
 
 export const artists = pgTable("artists", {
   cover: varchar("cover").notNull(),

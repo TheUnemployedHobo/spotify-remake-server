@@ -7,7 +7,7 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "preserve",
+    "module": "nodenext",
     "target": "esnext",
     "types": [],
     // For nodejs:
@@ -39,15 +39,6 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true,
-
-    // Import Aliases
-    "baseUrl": "./src",
-    "paths": {
-      "@controllers/*": ["controllers/*"],
-      "@middlewares/*": ["middlewares/*"],
-      "@database/*": ["database/*"],
-      "@routes/*": ["routes/*"]
-    }
+    "skipLibCheck": true
   }
 }
