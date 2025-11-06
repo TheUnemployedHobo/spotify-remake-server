@@ -1,6 +1,6 @@
 import { integer, pgTable, serial, varchar } from "drizzle-orm/pg-core"
 
-import { artists } from "./artist.schema.js"
+import { artists } from "./artist.schema"
 
 export const songs = pgTable("songs", {
   artist_id: integer("artist_id")

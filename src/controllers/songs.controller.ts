@@ -1,11 +1,10 @@
 import type { RequestHandler } from "express"
 
+import db from "@database/index"
+import { artists } from "@database/schema/artist.schema"
+import { genres } from "@database/schema/genre.schema"
+import { songs } from "@database/schema/song.schema"
 import { eq } from "drizzle-orm"
-
-import db from "../database/index.js"
-import { artists } from "../database/schema/artist.schema.js"
-import { genres } from "../database/schema/genre.schema.js"
-import { songs } from "../database/schema/song.schema.js"
 
 export const songGet: RequestHandler = async (req, res) => {
   try {

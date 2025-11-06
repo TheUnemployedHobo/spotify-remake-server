@@ -1,7 +1,7 @@
 import { integer, pgTable, serial, varchar } from "drizzle-orm/pg-core"
 
-import { songs } from "./song.schema.js"
-import { users } from "./user.schema.js"
+import { songs } from "./song.schema"
+import { users } from "./user.schema"
 
 export const playlistInfo = pgTable("playlist_info", {
   description: varchar("description"),

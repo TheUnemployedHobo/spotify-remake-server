@@ -1,11 +1,11 @@
 import { relations } from "drizzle-orm"
 
-import { artists } from "./schema/artist.schema.js"
-import { favorites } from "./schema/favorite.schema.js"
-import { genres } from "./schema/genre.schema.js"
-import { playlistInfo, playlists } from "./schema/playlists.schema.js"
-import { songs } from "./schema/song.schema.js"
-import { users } from "./schema/user.schema.js"
+import { artists } from "./schema/artist.schema"
+import { favorites } from "./schema/favorite.schema"
+import { genres } from "./schema/genre.schema"
+import { playlistInfo, playlists } from "./schema/playlists.schema"
+import { songs } from "./schema/song.schema"
+import { users } from "./schema/user.schema"
 
 export const songsRelations = relations(songs, ({ one }) => ({
   artist: one(artists, {
