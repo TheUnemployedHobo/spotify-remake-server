@@ -9,13 +9,19 @@ import { songs } from "../database/schema/song.schema.js"
 
 export const songGet: RequestHandler = async (req, res) => {
   try {
-    const { artist } = req.params
+    const data = await db.select().from(songs)
+    res.json(data).status(200)
 
-    if (artist === "all") {
-      const data = await db.select().from(songs)
-      res.json(data).status(200)
-      return
-    }
+    res.json(data).status(200)
+  } catch (error) {
+    console.error(error)
+    res.sendStatus(500)
+  }
+}
+
+export const songGetByArtist: RequestHandler = async (req, res) => {
+  try {
+    const { artist } = req.params
 
     const data = await db
       .select({
