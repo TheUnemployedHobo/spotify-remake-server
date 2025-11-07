@@ -36,6 +36,8 @@ export const playlistInfoDelete: RequestHandler = async (req, res) => {
     const { playlistId } = req.params
 
     await db.delete(playlistInfo).where(eq(playlistInfo.id, +playlistId!))
+
+    res.sendStatus(204)
   } catch (error) {
     console.error(error)
     res.sendStatus(500)

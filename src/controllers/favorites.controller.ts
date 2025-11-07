@@ -36,7 +36,7 @@ export const favoriteInsertOrDelete: RequestHandler = async (req, res) => {
 
     await db.delete(favorites).where(and(eq(favorites.user_id, userId), eq(favorites.song_id, +songId!)))
 
-    res.sendStatus(200)
+    res.sendStatus(204)
   } catch (error) {
     console.error(error)
     res.sendStatus(500)

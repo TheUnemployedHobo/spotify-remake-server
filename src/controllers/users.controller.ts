@@ -52,7 +52,7 @@ export const userDelete: RequestHandler = async (req, res) => {
 
     await db.delete(users).where(eq(users.id, userId))
 
-    res.sendStatus(200)
+    res.sendStatus(204)
   } catch (error) {
     console.error(error)
     res.sendStatus(500)
