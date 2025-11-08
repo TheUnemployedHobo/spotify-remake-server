@@ -1,19 +1,6 @@
-import type { Request, RequestHandler } from "express"
-import type { z } from "zod"
+import type { RequestHandler } from "express"
 
 import jwt from "jsonwebtoken"
-
-export const requestValidator =
-  (schema: z.ZodType, reqKey: keyof Request): RequestHandler =>
-  (req, res, next) => {
-    try {
-      schema.parse(req[reqKey])
-      next()
-    } catch (error) {
-      console.error(error)
-      res.sendStatus(500)
-    }
-  }
 
 export const resolveAuthToken: RequestHandler = (req, res, next) => {
   try {
