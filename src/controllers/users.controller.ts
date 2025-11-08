@@ -11,6 +11,11 @@ export const userSignUp: RequestHandler = async (req, res) => {
   try {
     const { password, username } = req.body
 
+    if (password.length < 8 || username.length < 3) {
+      res.sendStatus(422)
+      return
+    }
+
     const hashedPassword = await hash(password, 12)
     await db.insert(users).values({ password: hashedPassword, username })
 
