@@ -3,13 +3,26 @@ import type { RequestHandler } from "express"
 import { and, eq } from "drizzle-orm"
 
 import db from "../database/index.js"
+import { artists } from "../database/schema/artist.schema.js"
 import { favorites } from "../database/schema/favorite.schema.js"
+import { genres } from "../database/schema/genre.schema.js"
+import { songs } from "../database/schema/song.schema.js"
 
 export const favoriteGet: RequestHandler = async (req, res) => {
   try {
     const { userId } = req.body
 
-    const data = await db.select().from(favorites).where(eq(favorites.user_id, userId))
+    const data = await db
+      .select({
+        artist: artists.name,
+        genre: genres.name,
+        title: songs.title,
+      })
+      .from(favorites)
+      .leftJoin(songs, eq(favorites.song_id, songs.id))
+      .leftJoin(artists, eq(songs.artist_id, artists.id))
+      .leftJoin(genres, eq(artists.genre_id, genres.id))
+      .where(eq(favorites.user_id, userId))
 
     res.json(data).status(200)
   } catch (error) {
