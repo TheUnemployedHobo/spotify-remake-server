@@ -16,7 +16,9 @@ export const favoriteGet: RequestHandler = async (req, res) => {
       .select({
         artist: artists.name,
         genre: genres.name,
+        img: songs.img,
         songId: favorites.song_id,
+        songSrc: songs.src,
         title: songs.title,
       })
       .from(favorites)
