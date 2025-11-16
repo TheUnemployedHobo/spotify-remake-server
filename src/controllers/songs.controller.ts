@@ -10,7 +10,6 @@ import { songs } from "../database/schema/song.schema.js"
 export const songGet: RequestHandler = async (req, res) => {
   try {
     const data = await db.select().from(songs)
-    res.json(data).status(200)
 
     res.json(data).status(200)
   } catch (error) {
