@@ -9,7 +9,18 @@ import { songs } from "../database/schema/song.schema.js"
 
 export const songGet: RequestHandler = async (req, res) => {
   try {
-    const data = await db.select().from(songs)
+    const data = await db
+      .select({
+        artist: artists.name,
+        genre: genres.name,
+        id: songs.id,
+        img: songs.img,
+        src: songs.src,
+        title: songs.title,
+      })
+      .from(songs)
+      .innerJoin(artists, eq(artists.id, songs.artist_id))
+      .innerJoin(genres, eq(genres.id, artists.genre_id))
 
     res.json(data).status(200)
   } catch (error) {
