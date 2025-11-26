@@ -34,21 +34,24 @@ export const favoriteGet: RequestHandler = async (req, res) => {
   }
 }
 
-export const favoriteInsertOrDelete: RequestHandler = async (req, res) => {
+export const favoriteInsert: RequestHandler = async (req, res) => {
   try {
     const { userId } = req.body
     const { songId } = req.params
 
-    const data = await db
-      .select()
-      .from(favorites)
-      .where(and(eq(favorites.user_id, userId), eq(favorites.song_id, +songId!)))
+    await db.insert(favorites).values({ song_id: +songId!, user_id: userId })
 
-    if (!data.length) {
-      await db.insert(favorites).values({ song_id: +songId!, user_id: userId })
-      res.sendStatus(201)
-      return
-    }
+    res.sendStatus(201)
+  } catch (error) {
+    console.error(error)
+    res.sendStatus(500)
+  }
+}
+
+export const favoriteDelete: RequestHandler = async (req, res) => {
+  try {
+    const { userId } = req.body
+    const { songId } = req.params
 
     await db.delete(favorites).where(and(eq(favorites.user_id, userId), eq(favorites.song_id, +songId!)))
 
